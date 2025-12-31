@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+::selection{
+    background-color: #c8a681;
+    color: white;
+}
+
+::-webkit-scrollbar{
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #c8a681;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}

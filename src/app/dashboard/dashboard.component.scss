@@ -1,0 +1,141 @@
+:host{
+    display: block;
+    background-image: linear-gradient(to right, #c8a681 ,#a3896e, #3e3529);
+}
+
+
+
+form{
+    background-color: transparent;
+    border: 1px solid white;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+
+  @media (max-width: 992px) {
+    form {
+      width: 90% !important;
+    }
+  }
+  @media (max-width: 768px) {
+    form {
+      width: 90% !important;
+    }
+  }
+
+
+
+
+input, input::placeholder{
+    color: #3e3529 !important;
+}
+
+input.inpOne::placeholder {
+  text-indent:-5px;
+}
+
+input.inpTwo::placeholder {
+  text-indent: 0px;
+}
+
+
+
+
+
+
+  button.add{
+    background-color: #3e3529;
+  }
+
+
+  /************************************************TABLE******************************************/
+
+
+  table th{
+    color: #3e3529 !important;
+  }
+
+  .desc-hover {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.desc-hover:hover {
+  white-space: normal;
+  overflow: visible;
+  background-color: #3e3529; 
+  z-index: 1000;
+  position: absolute;
+  width: max-content;
+  max-width: 400px;
+  padding: 15px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.btns{
+  height: 10.1rem !important;
+  & button{
+    height: 40px;
+  }
+}
+
+
+
+
+  .tableContainer th,
+  .tableContainer td {
+    padding: 0.3rem; 
+  }
+
+  .btns button {
+    padding: 0.25rem 0.5rem; 
+    font-size: 0.75rem;
+  }
+
+.btns{
+  height: 7.9rem !important;
+  & button{
+    height: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .tableContainer table {
+    width: 90% !important; 
+  }
+
+  .tableContainer th,
+  .tableContainer td {
+    font-size: 0.85rem;
+    padding: 0.3rem;
+  }
+
+  .tableContainer .btns button {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .tableContainer td p {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,83 @@
+<div class="p-5 container">
+
+  <form (ngSubmit)="addProduct()" #productForm="ngForm" class="p-4 px-5 w-50 m-auto rounded-5" id="form">
+
+    <div class="mb-4">
+      <label for="name" class="form-label fw-bold text-white">Name</label>
+      <input type="text" name="name" id="name" class="form-control" required [(ngModel)]="productName" />
+    </div>
+
+
+    <div class="mb-4">
+      <label for="price" class="form-label fw-bold text-white">price</label>
+      <input type="number" name="price" id="price" class="form-control" required [(ngModel)]="productPrice" />
+    </div>
+
+    <div class="mb-4">
+      <label for="stock" class="form-label fw-bold text-white">stock</label>
+      <input type="number" name="stock" id="stock" class="form-control" required [(ngModel)]="productStock" />
+    </div>
+
+    <div class="mb-4">
+      <label for="coverImg" class="form-label fw-bold text-white">Cover Image URL</label>
+      <input
+        type="text"
+        name="coverImg"
+        id="coverImg"
+        class="form-control inpOne"
+        placeholder=' https://i.postimg.cc/Gm8G8Yhd/Givenchy.png '
+        required
+        [(ngModel)]="coverImg"
+      />
+    </div>
+
+
+
+    <div class="text-center mt-5">
+      <button
+        class="btn text-white fw-bold add px-4 rounded-pill"
+        type="submit"
+        [disabled]="productForm.invalid"
+      >
+        {{ editingProductId ? 'Update Product' : 'Add Product' }}
+      </button>
+    </div>
+
+  </form>
+
+</div>
+
+
+
+
+
+
+<div class="tableContainer mt-4 pb-5">
+  <div class="table-responsive"> 
+    <table class="table table-striped w-75 mx-auto">
+      <thead>
+        <tr class="text-center">
+          <th>Name</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Cover Image</th>
+          <th>EDIT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of results">
+          <td class="text-center align-middle">{{ item.name }}</td>
+          <td class="text-center align-middle">{{ item.price }}</td>
+          <td class="text-center align-middle">{{ item.stock }}</td>
+          <td class="text-center align-middle">
+            <p class="w-25">{{ item.imgUrl }}</p>
+          </td>
+          <td class="p-5 d-flex align-middle btns">
+            <button class="btn btn-warning rounded-4 me-3" (click)="loadProductToForm(item)">Update</button>
+            <button class="btn btn-danger rounded-4" (click)="deleteProduct(item.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
